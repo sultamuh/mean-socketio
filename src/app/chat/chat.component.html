@@ -1,0 +1,43 @@
+<div class="row container">
+    <div class="col-md-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h3 class="panel-title">Available Chat Rooms</h3></div>
+            <div class="panel-body text-center">
+                <select class="form-control" [(ngModel)]="room" (click)="joinRoom()" [disabled]="roomSelection">
+                    <option value="Main Lobby" selected>Main Lobby</option>
+                    <option value="Gamers Lobby">Gamers Lobby</option>
+                    <option value="Hackers Lobby">Hackers Lobby</option>
+                    <option value="Coders Lobby">Coders Lobby</option>
+                    <option value="General Lobby">General Lobby</option>
+                </select>
+                <span class="help-block">
+                <button class="btn btn-danger" (click)="leaveRoom()" type="submit" [disabled]="btnLeave">Leave</button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-warning">
+            <div class="panel-heading"><h3 class="panel-title">Welcome {{user}} to {{room}}!</h3></div>
+            <div class="panel-body">
+                <div class="well" id="chatMessages">
+                    <div *ngFor="let msg of messageArray">
+                        <span><strong>{{msg.user}}</strong> {{msg.message}}</span>
+                    </div>
+                    <i *ngIf="isTyping">Someone is typing...</i>
+                </div>
+                <form class="bs-component help-block" [formGroup]="chatForm">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">Message</span>
+                            <input class="form-control" type="text" formControlName="chatbox" (keypress)="typing()" [(ngModel)]="message">
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" [disabled]="chatForm.invalid" [disabled]="btnChat" type="submit" (click)="sendMsg()">Send</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

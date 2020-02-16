@@ -1,0 +1,6 @@
+#chatMessages{
+    overflow: auto; 
+    min-height:auto;
+    max-height:100%;
+    height:500px;
+}

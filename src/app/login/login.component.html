@@ -1,0 +1,17 @@
+<div class="container text-center">
+    <div class="jumbotron">
+        <h1>1337 Chat Room</h1>
+        <p>A simple MEAN STACK + SOCKET.IO chat.</p>
+        <form class="bs-component" [formGroup]="loginForm">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Username</span>
+                    <input class="form-control" type="text" [(ngModel)]="user" formControlName="username">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" (click)="userLogin()" [disabled]="loginForm.invalid" routerLink="/chat">Enter Chat</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
