@@ -11,13 +11,13 @@ import { typeWithParameters } from '@angular/compiler/src/render3/util';
 })
 export class ChatComponent implements OnInit {
 
-  @HostListener('window:beforeunload', [ '$event' ])
-  beforeUnloadHandler(event) {
-    var confirmationMessage = "\o/";
+  // @HostListener('window:beforeunload', [ '$event' ])
+  // beforeUnloadHandler(event) {
+  //   var confirmationMessage = "\o/";
 
-    (event || window.event).returnValue = confirmationMessage; //Gecko + IE
-    return confirmationMessage;     
-  }
+  //   (event || window.event).returnValue = confirmationMessage; //Gecko + IE
+  //   return confirmationMessage;     
+  // }
 
   chatForm: FormGroup;
   roomSelection: boolean = true;
