@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let EventModel = new Schema({
-    _id: {
+    socket_id: {
         type: String
     },
     event_type: {

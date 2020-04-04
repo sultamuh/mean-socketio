@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let SocketModel = new Schema({
-  _id: {
+  socket_id: {
     type: String
   },
   created_by: {
