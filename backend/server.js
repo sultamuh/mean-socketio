@@ -35,7 +35,7 @@ app.use('/', express.static(path.join(__dirname, 'dist')));
 
 
 // Create port
-const port =  3000;
+const port =  8000;
 const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
 })

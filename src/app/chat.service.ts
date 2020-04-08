@@ -8,7 +8,7 @@ export class ChatService{
 
     user: BehaviorSubject<string>;
 
-    private socket = io('http://localhost:3000');
+    private socket = io('http://localhost:8000');
 
     constructor() {
         this.user = new BehaviorSubject("Anonymous");
